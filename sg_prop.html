@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+
+    <style type="text/css">
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+      }
+      .left {
+        width: 38%;
+      }
+      .right {
+        flex: 1;
+        position: relative;
+      }
+
+      .right #mapView {
+        width: 100%;
+        height: 100%;
+      }
+
+      .right .wrapper {
+        position: absolute;
+        width: 200px;
+        background: #F7F9F9;
+        z-index: 100;
+        right: 20px;
+        top: 20px;
+        padding: 10px;
+        border-radius: 4px;
+      }
+      .right .wrapper .title {
+        margin-bottom: 10px;
+      }
+
+      .right .wrapper .select {
+        margin-bottom: 10px;
+      }
+        .slider-value {font-size:20px; color: #6F6D6D}
+      input[type="“range”"] {
+        display: block;
+        -webkit-appearance: none;
+        background-color: yellow;
+        width: 150px;
+        height: 5px;
+        border-radius: 5px;
+        margin: 0 auto;
+        outline: 0;
+      }
+      input[type="“range”"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background-color: #49a9ee;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid white;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+      }
+      input[type="“range”"]::-webkit-slider-thumb:hover {
+        background-color: white;
+        border: 2px solid #49a9ee;
+      }
+      input[type="“range”"]::-webkit-slider-thumb:active {
+        transform: scale(1.6);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://flo.uri.sh/visualisation/6158515/embed"
+        ></iframe>
+      </div>
+      <div class="right">
+        <div class="wrapper">
+          <div class="slider-value"> Year： 1960-1970</div>
+          <div class="slider-bar">
+            <input
+              style="width: 200px"
+              id="slider"
+              type="range"
+              min="1"
+              max="5"
+              step="1"
+              value="1"
+              list="tickmarks"
+            />
+            <div class="select" id="select">
+            <select>
+              <option value="Top20">top 20</option>
+              <option value="All">All</option>
+            </select>
+          </div>
+          </div>
+        </div>
+        <div id="mapView"></div>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://lib.baomitu.com/echarts/4.9.0-rc.1/echarts.js"
+    ></script>
+    <script src="https://public.flourish.studio/resources/embed.js"></script>
+    <script src="./static/world.js"></script>
+    <script src="./static/geoCoordMap.js"></script>
+    <script src="./static/top20.js"></script>
+    <script src="./static/topAll.js"></script>
+
+    <script type="text/javascript">
+      const sliderMapping = {
+        1: " Year： 1960-1970",
+        2: " Year： 1970-1980",
+        3: " Year： 1980-1990",
+        4: " Year： 1990-2000",
+        5: " Year： 2010-2020",
+      };
+
+      const App = {
+        init: function () {
+          this.selectType = "Top20";
+          this.sliderValue = "1";
+          this.initMap(top20Mapping[this.sliderValue]);
+          this.bindEvents();
+        },
+        initMap: function () {
+          this.mychart = echarts.init(document.getElementById("mapView"));
+          echarts.registerMap("world", world);
+          let dataRender;
+          if (this.selectType === "Top20") {
+            dataRender = top20Mapping[this.sliderValue];
+          }
+          if (this.selectType === "All") {
+            dataRender = topAllMapping[this.sliderValue];
+          }
+
+          const planePath =
+            "path://M.6,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705";
+          const convertData = function (data) {
+            const res = [];
+            for (let i = 0; i < data.length; i++) {
+              const dataItem = data[i];
+              const fromCoord = geoCoordMap[dataItem[0].name];
+              const toCoord = geoCoordMap[dataItem[1].name];
+              if (fromCoord && toCoord) {
+                res.push([
+                  {
+                    coord: fromCoord,
+                  },
+                  {
+                    coord: toCoord,
+                  },
+                ]);
+              }
+            }
+            return res;
+          };
+          const series = [];
+          [["Singapore", dataRender]].forEach((item, i) => {
+            series.push(
+              {
+                name: item[0] + " 飞行线",
+                type: "lines",
+                zlevel: 1,
+                effect: {
+                  show: true,
+                  period: 6,
+                  trailLength:0.8,
+                  color: "#fff",
+                  symbolSize: 6,
+                },
+                lineStyle: {
+                  normal: {
+                    color: "#fff",
+                    width: 0,
+                    curveness: 0.2,
+                  },
+                },
+                data: convertData(item[1]),
+              },
+              {
+                name: item[0] + " 飞行线路",
+                type: "lines",
+                zlevel: 2,
+                effect: {
+                  show: true,
+                  period: 6,
+                  trailLength: 0,
+                  symbol: planePath,
+                  symbolSize: 12,
+                },
+                lineStyle: {
+                  normal: {
+                    color: "#2980B9  ",
+                    width: 0.8,
+                    opacity: 0.6,
+                    curveness: 0.2,
+                  },
+                },
+                data: convertData(item[1]),
+              },
+              {
+                name: item[0] + " 系列",
+                type: "effectScatter",
+                coordinateSystem: "geo",
+                zlevel: 2,
+                rippleEffect: {
+                  brushType: "stroke",
+                },
+                label: {
+                  normal: {
+                    show: false,
+                    position: "top",
+                    fontSize: 9,
+                    formatter: "{b}",
+                    color: "rgba(0,0,0, 0.7)",
+                  },
+                },
+                symbolSize: (param) => {
+                  // return 5;
+                  if (this.selectType === "Top20") {
+                    if (param[2] < 1000) {
+                      return 4;
+                    }
+                    if (param[2] >= 1000 && param[2] < 3000) {
+                      return 6;
+                    }
+                    if (param[2] >= 3000 && param[2] < 5000) {
+                      return 7;
+                    }
+                    if (param[2] >= 5000 && param[2] < 7000) {
+                      return 8;
+                    }
+                    if (param[2] >= 7000 && param[2] < 9000) {
+                      return 9;
+                    }
+                    if (param[2] >= 9000) {
+                      return 10;
+                    }
+                  } else {
+                    return 4;
+                  }
+                },
+                itemStyle: {
+                  normal: {
+                    color: (param) => {
+                      // return "skyblue";
+                      if (this.selectType === "Top20") {
+                        if (param.value[2] < 1000) {
+                          return "#FFFF00";
+                        }
+                        if (param.value[2] >= 1000 && param.value[2] < 3000) {
+                          return "#fcd44a";
+                        }
+                        if (param.value[2] >= 3000 && param.value[2] < 5000) {
+                          return "#f9b744";
+                        }
+                        if (param.value[2] >= 5000 && param.value[2] < 7000) {
+                          return "#f38437";
+                        }
+                        if (param.value[2] >= 7000 && param.value[2] < 30000) {
+                          return "#f38437";
+                        }
+                        if (param.value[2] >= 30000) {
+                          return "#E74C3C";
+                        }
+                      } else {
+                        return "skyblue";
+                      }
+                    },
+                  },
+                },
+                data: item[1].map(function (dataItem) {
+                  return {
+                    name: dataItem[0].name,
+                    value: geoCoordMap[dataItem[0].name].concat([
+                      dataItem[0].value,
+                    ]),
+                  };
+                }),
+              }
+            );
+          });
+
+          this.option = {
+            backgroundColor: "#F7F9F9",
+            title: {
+              text: "",
+              left: "left",
+              textStyle: {
+                color: "#fff",
+              },
+            },
+            geo: {
+              map: "world",
+              zoom: 1.24,
+              top:220,
+              label: {
+                emphasis: {
+                  show: false,
+                },
+              },
+              roam: true,
+              itemStyle: {
+                normal: {
+                  areaColor: "#DBDBDB",
+                  borderColor: "#fff",
+                },
+                emphasis: {
+                  areaColor: "#A6ACAF ",
+                },
+              },
+            },
+            series: series,
+            tooltip: {
+              trigger: "item",
+              formatter: (param) => {
+                if (param.name === "Singapore") {
+                  return;
+                }
+                if (param && param.value) {
+                  return `<div>${param?.name}: ${param?.value[2]}</div>`;
+                }
+              },
+            },
+          };
+          this.mychart.setOption(this.option);
+        },
+        bindEvents: function () {
+          document.getElementById("select").addEventListener("change", (e) => {
+            this.selectType = e.target.value;
+            this.initMap();
+          });
+          document.getElementById("slider").addEventListener("input", (e) => {
+            this.sliderValue = e.target.value;
+            $(".slider-value").html(sliderMapping[e.target.value]);
+            this.initMap();
+          });
+        },
+      };
+      App.init();
+    </script>
+  </body>
+</html>

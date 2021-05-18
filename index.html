@@ -1,444 +1,333 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8' />
-    <title>Singapore transformation</title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
-    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
-    <script src="https://unpkg.com/scrollama"></script>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Singapore story.">
+        
+        <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/animate.css">
+        <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+        <link rel="stylesheet" type="text/css" href="resources/css/queries.css">
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+        <title>Singapore story</title>
+        
+        
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="row">
+                    <img src="resources/img/logo-white.png" alt="Singapore logo" class="logo">
+                    <img src="resources/img/logo.png" alt="Singapore logo" class="logo-black">
+                    <ul class="main-nav js--main-nav">
+                        <li><a href="#features">Snapshot</a></li>
+                        <li><a href="#works">Past</a></li>
+                        <li><a href="#cities">Present</a></li>
+                        <li><a href="#plans">Future</a></li>
+                    </ul>
+
+                </div>
+            </nav>
+            <div class="hero-text-box">
+                <h1>From Third World to First<br>The Singapore Story (1965-2020).</h1>
+               <!-- <a class="btn btn-full js--scroll-to-plans" href="#">I'm hungry</a>-->
+                <a class="btn btn-ghost js--scroll-to-start" href="#">Show me more</a>
+            </div>
+            
+        </header>
+        
+        <section class="section-features js--section-features" id="features">
+            <div class="row">
+                <h2>Snapshot</h2>
+                  
+            </div>
+            
+            <div class="row js--wp-1">
+                <div class="col span-1-of-3 box">
+<!--Load the chart libraries. Dimple is built on D3, and you need to also add D3-->
+<script charset="utf-8" src="https://d3js.org/d3.v4.min.js"></script>
+<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/dimple/2.3.0/dimple.latest.min.js"></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css" rel="stylesheet" />
+<script src="svy21.js"></script>
+<style>    
+    #chartContainer {width: 400px; margin: auto; margin-top: 0px; }
+    #chartContainer p {margin-left: 60px; margin-bottom: 5px; margin-top: 0; padding: 0;}
+    #charttitle {font: bold 22px  Verdana, sans-serif;}
+</style>
+
+<!--This is the div container for the chart-->
+
+<div id="chartContainer">
+      
+    <p id="charttitle">Most Competitive Economy </p>
+    <br>
+    <img src="resources/img/flag.jpg" alt="Singapore flag">
+
+</div>
+
+
+
+ 
+                </div>
+
+                <style>    
+                    #chartContainer2 {width: 400px; margin: auto; margin-top: 0px; }
+                    #chartContainer2 p {margin-left: 60px; margin-bottom: 5px; margin-top: 0; padding: 0;}
+                    #charttitle2 {font: bold 22px  Verdana, sans-serif;}
+                </style>
+
+                <div class="col span-1-of-3 box">
+                    <div id="chartContainer2">
+      
+                        <p id="charttitle">World's Best Airport </p>
+                    
+                    
+                    </div>
+
+                    <br>
+                    <img src="resources/img/airport.jpg" alt="Changi airport">
+
+                </div>
+
+
+
+                <style>    
+                    #chartContainer3 {width: 400px; margin: auto; margin-top: 0px; }
+                    #chartContainer3 p {margin-left: 60px; margin-bottom: 5px; margin-top: 0; padding: 0;}
+                    #charttitle3 {font: bold 22px  Verdana, sans-serif;}
+                </style>
+
+                <div class="col span-1-of-3 box">
+                    <div id="chartContainer3">
+      
+                        <p id="charttitle">Asia's Busiest seaport</p>
+                    
+                    
+                    </div>
+                    <br>
+                    <img src="resources/img/port.jpg" alt="sea port">
+
+                </div>
+
+
+            </div>   
+            <div class="row">
+  
+
+                <p>In 1965, Singapore became an independent nation after being booted out by Malaysia. Having no natural resources, many did not believe tiny Singapore (half the size of London) could survive on its own. With the will of the iron, Singapore began to urbanise and transform the city. In less than 60 years, Singaporeans are among the world's wealthiest populations, a far cry from the island's humble beginnings. Singapore is ranked first in world's most competitive economy, world's best airport and Asia's busiest seaport. </p>
+                
+            </div>
+        </section>
+        
+
+        
+        <section class="section-form", id="works">
+            <div class="row">
+                <h2>Asia trading hub</h2>
+            </div>
+            <div class="row">
+            <!-- BEGIN MENU-BAR -->
+           
+        </div>
+     
+            <div class="row">
+
+
+            <iframe title="Interactive map of property transactions in Singapore" src="sg_prop.html" width="100%" height="650"></iframe>
+
+            </div>
+            <br>
+            <div class="row">
+  
+                <p>Lying in between India Ocean and South China Sea, Singapore became a thriving trading port and attracted a large influx of immigrants from all over Asia. </p>              
+            </div>
+
+        </section>
+  
+        <section class="section-meals" id="cities">
+            <br>
+            <br>
+            <br>
+            <div class="row" >
+
+                <h2>Land Transformation</h2>
+             
+            </div>
+
+            <ul class="meals-showcase clearfix">
+                <li>
+                    <figure class="meal-photo">
+                        <img src="resources/img/1.jpg" alt="Wallich">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="resources/img/4.jpg" alt="Sculptura Ardmore">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="resources/img/2.jpg" alt="Le Nouvel Ardmore">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="resources/img/3.jpg" alt="Boulevard Vue">
+                    </figure>
+                </li>
+            </ul>
+            <ul class="meals-showcase clearfix">
+                <li>
+                    <figure class="meal-photo">
+                        <img src="resources/img/5.jpg" alt="Wallich">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="resources/img/8.jpg" alt="Sculptura Ardmore">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="resources/img/6.jpg" alt="Le Nouvel Ardmore">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="resources/img/7.jpg" alt="Boulevard Vue">
+                    </figure>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="section-cities">
+
+            <div class="row">
+  
+
+                <p>As more and more of Singapore's land is built up for urbanisation, the land use has not only changed but existing land are also planned for redevelopment."</p>
+                
+            </div>
+            <br>
+
+
+           <div class="row js--wp-3">
+
+    
+
+                <div class ="row">
+                    <iframe title="Compact city" src="sg_3D.html" width="100%" height="800"></iframe>
+                    <p>
+                    </div>
+
+
+                 <!--<div class="col span-1-of-4 box">
+                    <img src="resources/img/london.jpg" alt="London">
+                    <p>UK - James Dyson buys S$74m penthouse in 2018 (Wallich Residence)</p>
+              
+    
+                </div>
+                <div class="col span-1-of-4 box">
+                    <img src="resources/img/san-francisco.jpg" alt="San Francisco">
+                    <p>USA - Facebook co-founder Eduardo Saverin buys S$60m penthouse in 2017 (Sculptura Ardmore)</p>
+     
+                </div>
+                <div class="col span-1-of-4 box">
+                    <img src="resources/img/beijing.jpg" alt="Beijing">
+                    <p>China - Alibaba co-founder Sun Tongyu buys S$51m penthouse in 2015 (Le Nouvel Ardmore)</p>
+                </div>
+                <div class="col span-1-of-4 box">
+                    <img src="resources/img/copenhagen.jpg" alt="Copenhagen">
+                    <p>Denmark - Pandora family members buy 2 units of penthouse for S$31.1 million in 2019 (Boulevard Vue) </p>
+                </div>-->
+            </div>
+            
+
+
+
+        </section>
+
+
+        <section class="section-testimonials" id="plans">
+            <div class="row" id ="plans">
+     
+                <h2>The End of the Road?</h2>
+            </div>
+
+ 
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <blockquote>
+                        I’m pleased that we redeveloped the city when there was a chance to do it...That was a chance of a lifetime.”
+                        <cite><img src="resources/img/customer-1.jpg" alt="Customer 1 photo">Lee Kuan Yew, 1st PM (1965-1991) </cite>
+                    </blockquote>
+                </div>
+                <div class="col span-1-of-3">
+                    <blockquote>
+                        Urbanisation and nature, even if it is man-made, should go together."
+                        <cite><img src="resources/img/customer-2.jpg" alt="Customer 2 photo">Goh Chok Tong, 2nd PM (1991-2004)</cite>
+                    </blockquote>
+                </div>
+                <div class="col span-1-of-3">
+                    <blockquote>
+                        but with climate change, everything else must bend at the knee to safeguard the existence of our island nation."
+                    <cite><img src="resources/img/customer-3.jpg" alt="Customer 3 photo">Lee Hsien Loong, 3rd and incumbent PM</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+
+        
+        <section class="section-cities">  
+ 
+
+            <div class ="row">
+            <iframe title="Compact city" src="sg_chloro.html" width="100%" height="800"></iframe>
+            <p>
+            </div>
+
+            <div class="row js--wp-3">
+                <br> 
+                   
+            </div>
+        </section>
+            <footer>
    
-    <style>
-        body {
-            margin:0;
-            padding:0;
-            font-family: sans-serif;
-        }
-        a, a:hover, a:visited {
-            color: #0071bc;
-        }
-        #map {
-            top:0;
-            height: 100vh;
-            width:100vw;
-            position: fixed;
-        }
-        #header {
-            margin: auto;
-            width: 100%;
-            position: relative;
-            z-index: 5;
-        }
-        #header h1, #header h2, #header p {
-            margin: 0;
-            padding: 2vh 2vw;
-            text-align: center;
-        }
-        #footer {
-            width: 100%;
-            min-height: 5vh;
-            padding-top: 2vh;
-            padding-bottom: 2vh;
-            text-align: center;
-            line-height: 25px;
-            font-size: 13px;
-            position: relative;
-            z-index: 5;
-        }
-        #features {
-            padding-top: 10vh;
-            padding-bottom: 10vh;
-        }
-        .hidden {
-            visibility: hidden;
-        }
-        .centered {
-            width: 50vw;
-            margin: 0 auto;
-        }
-        .lefty {
-            width: 33vw;
-            margin-left: 5vw;
-        }
-        .righty {
-            width: 33vw;
-            margin-left: 62vw;
-        }
-        .fully {
-            width: 100%;
-            margin: auto;
-        }
-        .light {
-            color: #444;
-            background-color: #fafafa;
-        }
-        .dark {
-            color: #fafafa;
-            background-color: #444;
-        }
-        .step {
-            padding-bottom: 50vh;
-            /* margin-bottom: 10vh; */
-            opacity: 0.25;
-        }
-        .step.active {
-            opacity: 0.9;
-        }
+                <div class="row">
+                    <div style="text-align: center">
+                    <img src="resources/img/CASALogo.png" alt="CASA" height="100" width="100" ></div>
+                    <p><b>City Transformation 2021 - Singapore</b></p>
+                    <p>
+                        Group 2
+                    </p>
+                </div>
+            </footer>
+            
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
+    <script src="vendors/js/jquery.waypoints.min.js"></script>
+    <script src="resources/js/script.js"></script>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        .step div {
-            padding:  25px 50px;
-            line-height: 25px;
-            font-size: 13px;
-        }
+      ga('create', 'UA-61026110-2', 'auto');
+      ga('send', 'pageview');
 
-        .step img {
-            width: 100%;
-
-        }
-
-
-        @media (max-width: 750px) {
-            .centered, .lefty, .righty, .fully {
-                width: 90vw;
-                margin: 0 auto;
-            }
-        }
-
-        /* Fix issue on mobile browser where scroll breaks  */
-        .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan, 
-        .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan .mapboxgl-canvas {
-            touch-action: unset;
-        }
-
-        </style>
-</head>
-<body>
-
-<div id="map"></div>
-<div id="story"></div>
-<script src="resources/js/config.js"></script>
-
-<script>
-
-
-var layerTypes = {
-    'fill': ['fill-opacity'],
-    'line': ['line-opacity'],
-    'circle': ['circle-opacity', 'circle-stroke-opacity'],
-    'symbol': ['icon-opacity', 'text-opacity'],
-    'raster': ['raster-opacity'],
-    'fill-extrusion': ['fill-extrusion-opacity'],
-    'heatmap': ['heatmap-opacity']
-}
-
-var alignments = {
-    'left': 'lefty',
-    'center': 'centered',
-    'right': 'righty',
-    'full': 'fully'
-}
-
-function getLayerPaintType(layer) {
-    var layerType = map.getLayer(layer).type;
-    return layerTypes[layerType];
-}
-
-function setLayerOpacity(layer) {
-    var paintProps = getLayerPaintType(layer.layer);
-    paintProps.forEach(function(prop) {
-        var options = {};
-        if (layer.duration) {
-            var transitionProp = prop + "-transition";
-            options = { "duration": layer.duration };
-            map.setPaintProperty(layer.layer, transitionProp, options);
-        }
-        map.setPaintProperty(layer.layer, prop, layer.opacity, options);
-    });
-}
-
-var story = document.getElementById('story');
-var features = document.createElement('div');
-features.setAttribute('id', 'features');
-
-var header = document.createElement('div');
-
-if (config.title) {
-    var titleText = document.createElement('h1');
-    titleText.innerText = config.title;
-    header.appendChild(titleText);
-}
-
-if (config.subtitle) {
-    var subtitleText = document.createElement('h2');
-    subtitleText.innerText = config.subtitle;
-    header.appendChild(subtitleText);
-}
-
-if (config.byline) {
-    var bylineText = document.createElement('p');
-    bylineText.innerText = config.byline;
-    header.appendChild(bylineText);
-}
-
-if (header.innerText.length > 0) {
-    header.classList.add(config.theme);
-    header.setAttribute('id', 'header');
-    story.appendChild(header);
-}
-
-config.chapters.forEach((record, idx) => {
-    var container = document.createElement('div');
-    var chapter = document.createElement('div');
-
-    if (record.title) {
-        var title = document.createElement('h3');
-        title.innerText = record.title;
-        chapter.appendChild(title);
-    }
-
-    if (record.description) {
-        var story = document.createElement('p');
-        story.innerHTML = record.description;
-        chapter.appendChild(story);
-    }
-
-    if (record.image) {
-        var image = new Image();
-        image.src = record.image;
-        chapter.appendChild(image);
-    }
-
-    if (record.description1) {
-        var story = document.createElement('p');
-        story.innerHTML = record.description1;
-        chapter.appendChild(story);
-    }
-
-    if (record.image1) {
-        var image = new Image();
-        image.src = record.image1;
-        chapter.appendChild(image);
-    }
-
-    if (record.description2) {
-        var story = document.createElement('p');
-        story.innerHTML = record.description2;
-        chapter.appendChild(story);
-    }
-
-    if (record.image2) {
-        var image = new Image();
-        image.src = record.image2;
-        chapter.appendChild(image);
-    }
-
-    container.setAttribute('id', record.id);
-    container.classList.add('step');
-    if (idx === 0) {
-        container.classList.add('active');
-    }
-
-    chapter.classList.add(config.theme);
-    container.appendChild(chapter);
-    container.classList.add(alignments[record.alignment] || 'centered');
-    if (record.hidden) {
-        container.classList.add('hidden');
-    }
-    features.appendChild(container);
-});
-
-story.appendChild(features);
-
-var footer = document.createElement('div');
-
-if (config.footer) {
-    var footerText = document.createElement('p');
-    footerText.innerHTML = config.footer;
-    footer.appendChild(footerText);
-}
-
-if (footer.innerText.length > 0) {
-    footer.classList.add(config.theme);
-    footer.setAttribute('id', 'footer');
-    story.appendChild(footer);
-}
-
-mapboxgl.accessToken = config.accessToken;
-
-const transformRequest = (url) => {
-    const hasQuery = url.indexOf("?") !== -1;
-    const suffix = hasQuery ? "&pluginName=scrollytellingV2" : "?pluginName=scrollytellingV2";
-
-    return {
-      url: url + suffix
-    }
-}
-
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: config.style,
-    center: config.chapters[0].location.center,
-    zoom: config.chapters[0].location.zoom,
-    bearing: config.chapters[0].location.bearing,
-    pitch: config.chapters[0].location.pitch,
-    interactive: false,
-    transformRequest: transformRequest
-});
-
-if (config.showMarkers) {
-    var marker = new mapboxgl.Marker({ color: config.markerColor });
-    marker.setLngLat(config.chapters[0].location.center).addTo(map);
-}
-
-// instantiate the scrollama
-var scroller = scrollama();
-
-map.on("load", function() {
-    if (config.use3dTerrain) {
-        map.addSource('mapbox-dem', {
-            'type': 'raster-dem',
-            'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
-            'tileSize': 512,
-            'maxzoom': 14
-        });
-        // add the DEM source as a terrain layer with exaggerated height
-        map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
-      // Set global light properties which influence 3D layer shadows
-      map.setLight({color: "#fff", intensity: 0.15, position: [1.15, 210, 30]});
-      // Add standard navigation control
-      map.addControl(new mapboxgl.NavigationControl());
-
-
-        // add a sky layer that will show when the map is highly pitched
-        map.addLayer({
-        id: '3d_sg',
-        type: 'fill-extrusion',
-        source: {
-            //type: 'geojson',
-           // data: 'data/joined_layer.geojson'
-          type: 'vector',
-          url: 'mapbox://mengchongng.3tlhmbdp' // Your Mapbox tileset Map ID
-        },
-        //'source-layer': 'hex', // name of tileset
-        paint: {
-            'fill-extrusion-color': {
-                property: 'DN_mean',
-                type: 'exponential',
-                stops: [
-                    [0, 'black'],
-                    [5, 'rgb(29, 145, 192)'],
-                    [10, 'rgb(65, 182, 196)'],
-                    [15, 'rgb(127, 205, 187)'],
-                    [30, 'rgb(199, 233, 180)'],
-                    [100, 'rgb(255, 255, 204)']]
-            },
-            'fill-extrusion-height': ['/', ['number', ['get', 'DN_mean'], 2], 0.01],  //expression that controls the extrusion height based on employment attribute Emp2011
-            'fill-extrusion-opacity': 0.75,
-            'fill-extrusion-opacity-transition': {  //Opacity transition adds a delay when changing the opacity for a smooth layer change effect
-                 duration: 1000,
-                 delay: 0
-             }
-            }
-      });
-
-      map.addLayer({
-        id: 'flat_sg',
-        type: 'fill',
-        source: {
-        type: 'vector',
-        url: 'mapbox://mengchongng.3tlhmbdp' // Your Mapbox tileset Map ID
-        },
-        //'source-layer': 'flat', // name of tileset
-        paint: {
-            'fill-color': {
-                property: 'DN_mean',
-                type: 'exponential',
-                stops: [
-                    [0, 'black'],
-                    [5, 'rgb(29, 145, 192)'],
-                    [10, 'rgb(65, 182, 196)'],
-                    [15, 'rgb(127, 205, 187)'],
-                    [30, 'rgb(199, 233, 180)'],
-                    [100, 'rgb(255, 255, 204)']]
-            },
- //expression that controls the extrusion height based on employment attribute Emp2011
-            'fill-opacity': 0.75,
-            'fill-opacity-transition': {  //Opacity transition adds a delay when changing the opacity for a smooth layer change effect
-                 duration: 1000,
-                 delay: 0
-             }
-            }
-      });
-
-      map.addLayer({
-        id: 'rec_sg',
-        type: 'fill',
-        source: {
-        type: 'vector',
-        url: 'mapbox://mengchongng.3tlhmbdp' // Your Mapbox tileset Map ID
-        },
-        //'source-layer': 'flat', // name of tileset
-        paint: {
-
- //expression that controls the extrusion height based on employment attribute Emp2011
-            'fill-opacity': 0.75,
-            'fill-opacity-transition': {  //Opacity transition adds a delay when changing the opacity for a smooth layer change effect
-                 duration: 1000,
-                 delay: 0
-             }
-            }
-      });
-
-
-
-    };
-
-    // setup the instance, pass callback functions
-    scroller
-    .setup({
-        step: '.step',
-        offset: 0.5,
-        progress: true
-    })
-    .onStepEnter(response => {
-        var chapter = config.chapters.find(chap => chap.id === response.element.id);
-        response.element.classList.add('active');
-        map[chapter.mapAnimation || 'flyTo'](chapter.location);
-
-        if (config.showMarkers) {
-            marker.setLngLat(chapter.location.center);
-        }
-        if (chapter.onChapterEnter.length > 0) {
-            chapter.onChapterEnter.forEach(setLayerOpacity);
-        }
-        if (chapter.callback) {
-            window[chapter.callback]();
-        }
-        if (chapter.rotateAnimation) {
-            map.once('moveend', function() {
-                const rotateNumber = map.getBearing();
-                map.rotateTo(rotateNumber + 90, {
-                    duration: 24000, easing: function (t) {
-                        return t;
-                    }
-                });
-            });
-        }
-    })
-    .onStepExit(response => {
-        var chapter = config.chapters.find(chap => chap.id === response.element.id);
-        response.element.classList.remove('active');
-        if (chapter.onChapterExit.length > 0) {
-            chapter.onChapterExit.forEach(setLayerOpacity);
-        }
-    });
-});
-
-// setup resize event
-window.addEventListener('resize', scroller.resize);
-
-</script>
-
-</body>
+    </script>
+    
+    </body>  
+    
 </html>
