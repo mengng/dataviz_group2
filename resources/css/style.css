@@ -555,6 +555,13 @@ footer p {
 
 /* MENU-BAR */
 
-
-
-
+.section-tab .tabs{ width: 100%; height: auto; padding: 2% 0;}
+.section-tab .tabs ul{ display: flex;}
+.section-tab .tabs ul li{ list-style-type: none; cursor: pointer; height: 40px; font-size: 23px; line-height: 40px; flex: 1; text-align: center; background: #eee;}
+.section-tab .tabs ul li:hover{ color: #e67e22;}
+.section-tab .tabbox .item{display: none;}
+.section-tab .tabbox .item img{ float: left; width: 60%; padding:0 20px 0 0;}
+.section-tab .tabbox .item p{ line-height: 1.8;}
+.section-tab .tabbox .item:first-child{ display: block;}
+.thumbre{position: relative;}
+.thumb{ position: absolute; left: 0; bottom: 0; z-index: 99; width: 20%;}

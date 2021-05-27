@@ -140,7 +140,6 @@
 
             <iframe title="Interactive map of property transactions in Singapore" src="sg_prop.html" width="100%" height="650"></iframe>
             <p><a href="https://mengng.github.io/dataviz_group2/sg_prop.html" target="_blank">For faster loading, open frame in new tab</a></p>
-
             </div>
             <br>
             <div class="row">
@@ -205,49 +204,75 @@
                 </li>
             </ul>
         </section>
-        
+		  
+		  <section class="section-tab">
+				<div class="row">
+				     <p>Concept Plans:
+                         As a country with limited land area and high population density, land use planning plays an important role. To guide Singapore’s development over the next half a century, the Concept Plan is used to map out our long-term plans for strategic land use and transportation. Its main aim is to ensure there is sufficient land to meet our long-term needs, while ensuring the people continue to enjoy a quality living environment. It balances people’s basic life (housing, parks), national development (commerce, industry), social infrastructure (transportation, installation), and national defense. </p>
+				</div>
+				<div class="row">
+					<div class="tabs">
+						<ul>
+							<li onclick="tab('tab1',this)">1971</li>
+							<li onclick="tab('tab2',this)">1991</li>
+							<li onclick="tab('tab3',this)">2001</li>
+							<li onclick="tab('tab4',this)">2011</li>
+						</ul>
+					</div>
+					<div class="tabbox">
+						<div class="item" id="tab1">
+							<img src="resources/img/1971.jpg" alt="">
+							<p>The first conceptual plan was formulated in 1971, laying the foundation for Singapore's development and urban structure. The plan set out broad principles to develop new housing towns, industrial estates, transport infrastructure and recreational spaces across the island, by adopting a'ring' structure of satellite towns around the central water catchment. The Central Area was established as the Central Business District , and has grown to have many global financial institutions and regional headquarters located here today.</p>
+						</div>
+						<div class="item" id="tab2">
+							<img src="resources/img/1991.jpg" alt="">
+							<p>The urbanization success involved a focus on providing residents with homes by 1990, 88 percent of residents owned their homes, one of the highest home-ownership rates in the world. The basic urban needs of the past were transformed into diversified needs for work, entertainment, culture and commerce. And efforts were made to integrate urban development with the natural environment. On this basis, a strategy for cultural and commercial corridors, technological corridors, and industrialization development were put forward. (Such as The Plan proposed cultural and commercial corridors, and a hierarchy of commercial centres in different parts of the island to bring jobs closer to homes and alleviate congestion in the city centre. It solves the problem of traffic congestion and improves traffic Efficiency. This idea has also been applied to urban planning in recent years)</p>
+						</div>
+						<div class="item" id="tab3">
+							<img src="resources/img/2001.jpg" alt="">
+							<p>The Concept Plan Review in 2001 factored in new trends to ensure that the land use plans remained robust in addressing future challenges. The plan envisioned Singapore as a thriving world-class city in the 21st century, with rich heritage, character, diversity and identity. In developing the plan, an extensive public consultation exercise was carried out to seek the views of key stakeholders. It aimed to provide a high quality living environment by offering a wider choice of housing options, and also sought to transform Singapore into a global financial hub by setting aside land in the city centre to support the growth of financial and services sectors. As part of the Concept Plan 2001, an Identity Plan and Parks and Waterbodies Plan was drawn up to enhance Singapore’s natural and built identity. Under these two plans, we identified 15 nodes where the existing character of the built environment would be reinforced, and created more recreation choices through the opening up of more parks, reservoirs and natural areas.</p>
+						</div>
+						<div class="item" id="tab4">
+							<img src="resources/img/2011.jpg" alt="">
+							<p>The plan pays more attention to people's quality of life, and reserves land to provide more choices and development space for future generations. Pay more attention to the integration and efficiency of multiple functions, such as integrating green into commercial residential areas and enhancing the links of multiple transportation modes. The strategies to sustain a high-quality living environment include: 1. Providing good affordable homes with a full range of amenities; 2. Integrating greenery into the living environment; 3. Providing greater mobility with enhanced transport connectivity; 4. Sustaining a vibrant economy with good jobs; 5. Ensuring room for growth and a good living environment in future.</p>
+						</div>
+					</div>
+				</div>
+        </section>
+		  
+		  <script type="text/javascript">
+		  	 function tab(pid,a){
+				var tabs=["tab1","tab2","tab3","tab4"];
+				 for(var i=0;i<4;i++){
+					 if(tabs[i]==pid){
+						document.getElementById(tabs[i]).style.display="block";
+					 }else{
+						document.getElementById(tabs[i]).style.display="none";
+					 }
+				 }
+		  	 }
+		  </script>
+		  
+		  
         <section class="section-cities">
 
             <div class="row">
   
 
-                <p>As more and more of Singapore's land is built up for urbanisation, the land use has not only changed but existing land are also planned for redevelopment."</p>
+                <p>As more and more of Singapore's land is built up for urbanisation, the land use has not only changed but existing land are also planned for redevelopment in 2021.</p>
                 
             </div>
             <br>
 
 
            <div class="row js--wp-3">
-
-    
-
-                <div class ="row">
+               <div class ="row thumbre">
                     <iframe title="Compact city" src="sg_3D.html" width="100%" height="800"></iframe>
-                    <p><a href="https://mengng.github.io/dataviz_group2/sg_3D.html" target="_blank">For faster loading, open frame in new tab</a></p>
-            
-                    <p>
-                    </div>
-
-
-                 <!--<div class="col span-1-of-4 box">
-                    <img src="resources/img/london.jpg" alt="London">
-                    <p>UK - James Dyson buys S$74m penthouse in 2018 (Wallich Residence)</p>
-              
-    
-                </div>
-                <div class="col span-1-of-4 box">
-                    <img src="resources/img/san-francisco.jpg" alt="San Francisco">
-                    <p>USA - Facebook co-founder Eduardo Saverin buys S$60m penthouse in 2017 (Sculptura Ardmore)</p>
-     
-                </div>
-                <div class="col span-1-of-4 box">
-                    <img src="resources/img/beijing.jpg" alt="Beijing">
-                    <p>China - Alibaba co-founder Sun Tongyu buys S$51m penthouse in 2015 (Le Nouvel Ardmore)</p>
-                </div>
-                <div class="col span-1-of-4 box">
-                    <img src="resources/img/copenhagen.jpg" alt="Copenhagen">
-                    <p>Denmark - Pandora family members buy 2 units of penthouse for S$31.1 million in 2019 (Boulevard Vue) </p>
-                </div>-->
+							<img src="resources/img/aa.jpg" alt="" class="thumb">
+                            <p><a href="https://mengng.github.io/dataviz_group2/sg_3D.html" target="_blank">For faster loading, open frame in new tab</a></p>
+               </div>
+        
+         <p>Singapore’s transformation in urbanization lay in two key areas: The first was a focus on making people’s lives livable; and second, helping the land become sustainable.Government policy formed the basis for these initiatives to make areas more livable, urban planners created accessible space for basic resources that would also benefit the economy, such as schools, universities and hospitals.</p> 
             </div>
             
 
