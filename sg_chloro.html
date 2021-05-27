@@ -209,6 +209,14 @@ config.chapters.forEach((record, idx) => {
         chapter.appendChild(image);
     }
 
+    // Creates the image credit for the vignette
+    if (record.imageCredit) {
+        var imageCredit = document.createElement('p');
+        imageCredit.classList.add('imageCredit');
+        imageCredit.innerHTML = 'Image credit: ' + record.imageCredit;
+        chapter.appendChild(imageCredit);
+    }
+
     if (record.description1) {
         var story = document.createElement('p');
         story.innerHTML = record.description1;
@@ -220,6 +228,14 @@ config.chapters.forEach((record, idx) => {
         image.src = record.image1;
         chapter.appendChild(image);
     }
+    // Creates the image credit for the vignette
+    if (record.image1Credit) {
+        var image1Credit = document.createElement('p');
+        image1Credit.classList.add('image1Credit');
+        image1Credit.innerHTML = '' + record.image1Credit;
+        chapter.appendChild(image1Credit);
+    }
+
 
     if (record.description2) {
         var story = document.createElement('p');

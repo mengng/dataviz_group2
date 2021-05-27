@@ -17,6 +17,7 @@ var config = {
             image: 'resources/img/sea_level.png',
             description1:" <p>Around 30 per cent of Singapore including the central business district, airport, port and the industrial island is below 5m. Against the backdrop of rising temperature and sea levels, <font style='color:tomato'>this city state is sinking</font style> as she walks through the 'coal fire' of climate change.</p>",
             image1:'resources/img/fire_walk.png',
+            image1Credit: 'Firewalking festival in Singapore',
             location: {
                 center: [103.7, 1.4],
                 zoom: 10.77,
